@@ -1,7 +1,8 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
-<script src="../static/js/marketfront.js"></script>
+<script src="../static/js/{% block content %}{{ fname }}{% endblock content %}.js"></script>
 <link rel="stylesheet" type="text/css" href="../static/css/marketfront.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -27,8 +28,8 @@
           </a>
 
           <a href="http://127.0.0.1:8000/upload">
-              <button class="buttons">Upload</button>
-          </a>
+            <button class="buttons">Upload</button>
+        </a>
 
           <div class="dropdown">
               <button class="dropbtn">Categories</button>
@@ -36,7 +37,7 @@
                 <a href="http://127.0.0.1:8000/marketfront">All Item</a>
                 <a href="#">Book</a>
                 <a href="#">Equipments</a>
-                <a href="#">Donate</a>
+                <a href="http://127.0.0.1:8000/donates">Donate</a>
               </div>
             </div>
           
