@@ -28,5 +28,6 @@ urlpatterns = [
     path('mainpage/', views.mainpage),
     path('marketfront/', views.marketfront),
     path('loadposts/', views.loadposts),
-    path('profile/', views.profile)
+    path('profile/', views.profile),
+    path('donates/', views.donates)
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
