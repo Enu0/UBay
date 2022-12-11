@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="../static/js/websocket.js"></script>
+    <title>
+        UBay Market
+    </title>
+    <link rel="icon" href="../static/image/Logo.png">
+    <link rel="stylesheet" href="../static/css/marketfront.css">
+    <link rel="stylesheet" href="../static/css/Upload.css">
+</head>
+
+<body class="border">
+
+    <div class = "header">
+        <div class = "logo">
+            <a href="http://127.0.0.1:8000/marketfront"><img src = "../static/image/Logo.png" alt = "Logo" class="logo_image" ></a>
+  
+        </div>
+        <div class="search">
+            <form action="/action_page.php" class="search">
+                <input type="text" placeholder="Search.." name="search"style="width:600px;height: 50px;border-radius: 25px " >
+                <button type="submit" class ="search_button">Search</button>
+            </form> 
+        </div>
+    </div>
+    
+        <div class = "nav">
+            <a href="http://127.0.0.1:8000/profile">
+                <button class="account_button">MY ACCOUNT</button>
+            </a>
+            <a href="http://127.0.0.1:8000/upload">
+                <button class="buttons">Upload</button>
+            </a>
+            <div class="dropdown">
+                <button class="dropbtn">Categories</button>
+                <div class="dropdown-content">
+                  <a href="http://127.0.0.1:8000/marketfront">All Item</a>
+                  <a href="#">Book</a>
+                  <a href="#">Equipments</a>
+                </div>
+              </div>
+            
+        </div>
+
+  <div class="center">
+    <form method="post" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <label for="ProductName" class="title"><b>Product Name:</b></label><br>
+        <input type="text" id="ProductName" name="ProductName" class="in"><br>
+        <label for="price"><b>Price:</b></label><br>
+        <input type="text" id="price" name="price"><br>
+        <label for="description" class="title"><b>Description:</b></label><br>
+
+        <textarea id="description" name="description" rows="10" cols="100"></textarea><br>
+
+        <label><b>Category:</b></label><br>
+        <select name = "type" id = "type">
+            <option value="" disabled selected>Select your option</option>
+            <option value="Book">Book</option>
+            <option value="Equipments">Equipments</option>
+            <option value="Donate" >Donate </option>
+        </select><br><br>
+        <input type="file" name="upload" id="form-file" accept="image/*" onchange="loadFile(event)">
+        <p><img id="output" width="200"/></p>
+        <script>
+            var loadFile = function(event) {
+                var image = document.getElementById('output');
+                image.src=URL.createObjectURL(event.target.files[0]);
+            };
+        </script><br>
+        
+        <input type="submit" value="Submit" class="sub">
+    </form>
+    </div>
+</body>
+</html>

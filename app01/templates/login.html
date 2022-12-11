@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../static/css/loginPage.css">
+    </head>
+
+    <body>
+        <div class="content">
+            <div id="loginBox">
+              <div class="title">Login</div>
+              <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div id="nameBox">
+                  <input id="form-name" type="text" name="sender" required>
+                  <div id="underline"></div>
+                  <label for="form-name" class="username">Your Username</label>
+                  <div id="underline"></div>
+                </div>
+                <div id="passwordBox">
+                  <input id="form-comment" type="text" name="password" required>
+                  <div id="underline"></div>
+                  <label for="form-comment" class="password">Your Password</label>
+                  <div id="underline"></div>
+                </div>
+                <input type="submit" value="Login" id="submitButton">
+              </form>
+              <a href="http://127.0.0.1:8000/register/" id="newUser">New User?</a>
+            </div>
+            <div class="background"></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            margin: 100px 100px;
+            display: flex;
+            width: 1040px;
+            height: 700px;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            box-shadow: #ccc 0 0 10px;
+        }
+
+        .playimg {
+            width: 800px;
+            height: 600px;
+        }
+
+        ul {
+            list-style: none;
+            width: 200px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        li>img:hover {
+            box-shadow: 0 0 10px #0ff;
+            /* border-color: #0ff; */
+            /* width: 500px;
+            height: 400px; */
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="play" class="playimg">
+            <img id="imgPlay" src="" alt="">
+        </div>
+        <ul>
+            <li><img class="liImg active" src="" alt=""></li>
+            <li><img class="liImg" src="" alt=""></li>
+            <li><img class="liImg" src="" alt=""></li>
+            <li><img class="liImg" src="" alt=""></li>
+        </ul>
+    </div>
+    <script>
+        var ImgArr = [
+        '../static/css/img/test2.jpg',
+        '../static/css/img/test2.jpg',
+        '../static/css/img/cat.png',
+            'images/4.jpg'
+        ];
+        var divPlay = document.getElementById("play");
+        var imgPlay = document.getElementById('imgPlay');
+        var liImg = document.getElementsByClassName('liImg');
+
+        var clock; //计时器
+        var count = 0; //计数器
+
+
+        //刚开始加载时显示第一张
+        imgPlay.src = ImgArr[0];
+
+        // 为右侧的图片绑定点击事件
+        for (let i = 0; i < liImg.length; i++) {
+            liImg[i].src = ImgArr[i];
+            liImg[i].onclick = () => {
+                imgPlay.src = ImgArr[i];
+            }
+            liImg[i].onmouseenter = () => {
+                imgPlay.src = ImgArr[i];
+                stop();
+            }
+            liImg[i].onmouseleave = () => {
+                again();
+            }
+        }
+        divPlay.onmouseenter = () => {
+            stop();
+        }
+        divPlay.onmouseleave = () => {
+            again();
+        }
+        //轮播
+        function start() {
+            if (count == 3) {
+                count = 1;
+            } else {
+                count++; //更新计数器
+            }
+            imgPlay.src = ImgArr[count];
+
+        }
+
+        //停止轮播
+        function stop() {
+            clearInterval(clock);
+        }
+
+        //鼠标离开继续轮播
+        function again() {
+            clock = setInterval(this.start, 2000);
+        }
+        (() => {
+            clock = setInterval(this.start, 2000); //创建计时器，2秒执行一次start函数
+        })();
+    </script>
+</body>
+
+</html>

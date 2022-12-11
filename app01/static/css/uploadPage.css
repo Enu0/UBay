@@ -1,0 +1,12 @@
+body{
+    background-color: #BDBDBD;
+}
+
+#mainBox{
+    left: 200px;
+    position: relative;
+    top: 100px;
+    height: 580px;
+    width: 1000px;
+    background-color: white;
+}

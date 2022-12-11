@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <script src="../static/js/marketfront.js"></script>
+
+    <head>
+        <title>
+            UBay Market
+        </title>
+        <link rel="icon" href="../static/image/Logo.png">
+        <link rel="stylesheet" href="../static/css/marketfront.css">
+        <link rel="stylesheet" href="../static/css/Acoount.css">
+    </head>
+    <body class="border" onload="onload()">
+
+        <div class = "header">
+            <div class = "logo">
+                <a href="http://127.0.0.1:8000/marketfront"><img src = "../static/image/Logo.png" alt = "Logo" class="logo_image" ></a>
+            </div>
+            <div class="search">
+                <form action="/action_page.php" class="search">
+                    <input type="text" placeholder="Search.." name="search"style="width:600px;height: 50px;border-radius: 25px " >
+                    <button type="submit" class ="search_button">Search</button>
+                </form> 
+            </div>
+        </div>
+        
+            <div class = "nav">
+                <a href="http://127.0.0.1:8000/profile">
+                    <button class="account_button">MY ACCOUNT</button>
+                </a>
+                <a href="http://127.0.0.1:8000/upload">
+                    <button class="buttons">Upload</button>
+                </a>
+                <div class="dropdown">
+                    <button class="dropbtn">Categories</button>
+                    <div class="dropdown-content">
+                      <a href="http://127.0.0.1:8000/marketfront">All Item</a>
+                      <a href="#">Book</a>
+                      <a href="#">Equipments</a>
+                      <a href="#">Donate</a>
+                    </div>
+                  </div>
+                
+            </div>
+      </div>
+      <div>
+        <div class = d1>
+            <div class = "logo">
+                <img src = "../static/image/beluga.jpeg" alt = "Logo" class="logo_image" ></a>
+            </div>
+
+            <div class="text">
+                <h1>
+                    Username
+                </h1>
+                <p><i>
+                    Rating:
+                </i>
+                </p>
+                <p>
+                    Contact Information & description about me & my preferred payment method
+                </p>
+            </div>
+        </div>
+        <div class = d2>
+            <a href="#">Password Reset</a>
+        </div> 
+        <div class="d3">
+            <a href="#">Change Unsername</a>
+        </div>
+      </div>
+      <div>
+        <h1 class="center">
+            Sold/Donate Items:
+        </h1>
+        <div class="d3">
+            Items goes here
+        </div>
+      </div>
+      <div>
+        <h1 class="center">
+            Selling Items:
+        </h1>
+        <div class="d4">
+            <div id="posts" class="cardsbox"></div>
+        </div>
+      </div>
+    </body>
+
+</html>

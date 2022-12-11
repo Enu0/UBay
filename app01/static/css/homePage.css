@@ -1,0 +1,49 @@
+@font-face{
+    font-family: tea;
+    src:url(font/tea.ttf)
+}
+
+body {
+    background-color: #7E57C2;
+}
+
+/* ----------------- userbar的css -----------------*/
+#userbar {
+    height: 85px;
+    width: 100%;
+    background-color: #9575CD;
+}
+
+#ItemList {
+    height: 1200px;
+    width: 100%;
+    background-color: #9575CD;
+}
+
+#Adbox {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    background-color: #9575CD;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background: url("img/test.jpg") no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.rbox {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: darkgray;
+    position: relative;
+    top: 370px;
+    left: 1300px;
+}
+
+.rbox:hover {
+    background-color: white;
+}
