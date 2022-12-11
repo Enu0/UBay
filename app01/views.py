@@ -36,6 +36,9 @@ def upload(request):
         db.addProductInfo(id, price, description)
         db.addProduct(ProductName, p_type, id, filename, 'Zesen')
         return render(request, 'upload.html')
+    
+def donates(request):
+    return render(request, "marketfront.html", {"fname" : "displayDonation"}) 
 
 
 def mainpage(request):
@@ -45,7 +48,7 @@ def profile(request):
     return render(request, "Account.html")
 
 def marketfront(request):
-    return render(request, "marketfront.html")
+    return render(request, "marketfront.html", {"fname" : "marketfront"})
 
 def loadposts(request):
     return HttpResponse(json.dumps(db.loadProductInfo()), content_type ="application/json")
